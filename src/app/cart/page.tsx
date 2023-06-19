@@ -10,6 +10,7 @@ export default function Cart() {
     return (
         <div className="">
             <Hello />
+            <RedBtn />
             <h4 className="title">Cart</h4>
             {CartData.map((item, i) => {
                 return <CartItem item={item} key={i} />;
@@ -24,6 +25,15 @@ const CartItem = ({ item: { 상품명, 가격, 수량 } }) => {
             <p>{상품명}</p>
             <p>{가격}</p>
             <p>{수량}</p>
+            <RedBtn color="bg-green-300" title="구매하기" />
         </div>
+    );
+};
+
+const RedBtn = ({ color = "bg-red-300", title = "button" }) => {
+    return (
+        <button onClick={null} className={`p-1 ${color} `}>
+            {title}
+        </button>
     );
 };
